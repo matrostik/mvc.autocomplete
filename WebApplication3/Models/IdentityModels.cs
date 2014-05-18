@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 
 namespace WebApplication3.Models
 {
@@ -13,5 +14,16 @@ namespace WebApplication3.Models
             : base("DefaultConnection")
         {
         }
+
+        public DbSet<Street> Cities { get; set; }
+    }
+
+    public class Street
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public string City { get; set; }
     }
 }
